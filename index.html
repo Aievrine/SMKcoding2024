@@ -1,106 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kalkulator Sederhana</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #ffe6f2; /* Pink pastel */
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-
-    .calculator {
-        background-color: #ffb3d9; /* Pink tua */
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        width: 300px; /* Lebar kalkulator */
-    }
-
-    .display {
-        width: calc(100% - 20px); /* Lebar 100% dikurangi padding */
-        padding: 10px;
-        margin-bottom: 10px;
-        border-radius: 5px;
-        border: none;
-        font-size: 18px;
-        text-align: right;
-    }
-
-    .row {
-        display: flex;
-    }
-
-    .row input[type="button"] {
-        flex: 1;
-        padding: 15px;
-        margin: 5px;
-        border-radius: 5px;
-        border: none;
-        background-color: #ff80bf; /* Pink tua */
-        color: white;
-        font-size: 18px;
-        cursor: pointer;
-    }
-
-    .row input[type="button"]:hover {
-        background-color: #ff66a3; /* Pink tua gelap */
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aerin's Student Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="calculator">
-        <input type="text" class="display" id="display" readonly>
-        <div class="row">
-            <input type="button" value="7" onclick="appendToDisplay('7')">
-            <input type="button" value="8" onclick="appendToDisplay('8')">
-            <input type="button" value="9" onclick="appendToDisplay('9')">
-            <input type="button" value="/" onclick="appendToDisplay('/')">
-        </div>
-        <div class="row">
-            <input type="button" value="4" onclick="appendToDisplay('4')">
-            <input type="button" value="5" onclick="appendToDisplay('5')">
-            <input type="button" value="6" onclick="appendToDisplay('6')">
-            <input type="button" value="*" onclick="appendToDisplay('*')">
-        </div>
-        <div class="row">
-            <input type="button" value="1" onclick="appendToDisplay('1')">
-            <input type="button" value="2" onclick="appendToDisplay('2')">
-            <input type="button" value="3" onclick="appendToDisplay('3')">
-            <input type="button" value="-" onclick="appendToDisplay('-')">
-        </div>
-        <div class="row">
-            <input type="button" value="C" onclick="clearDisplay()">
-            <input type="button" value="0" onclick="appendToDisplay('0')">
-            <input type="button" value="=" onclick="calculate()">
-            <input type="button" value="+" onclick="appendToDisplay('+')">
-        </div>
-    </div>
+    <header>
+        <h1 id="animated-heading">Welcome to Aerin's Student Portfolio</h1>
+        <p>Creative, Curious, and Passionate Student</p>
+    </header>
 
-    <script>
-        function appendToDisplay(value) {
-            document.getElementById('display').value += value;
-        }
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#interests">Interests</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-        function clearDisplay() {
-            document.getElementById('display').value = '';
-        }
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! My name is Aerin Natasya. I’m a 16-year-old student with a strong interest in technology, coding, and design. I love to explore new things and challenge myself in different fields of study.</p>
+    </section>
 
-        function calculate() {
-            try {
-                var result = eval(document.getElementById('display').value);
-                document.getElementById('display').value = result;
-            } catch (error) {
-                document.getElementById('display').value = 'Error';
-            }
-        }
-    </script>
+    <section id="interests">
+        <h2>Things I Want to Learn</h2>
+        <ul>
+            <li>Advanced JavaScript and Web Development</li>
+            <li>UI/UX Design Techniques</li>
+            <li>Data Analysis with Python</li>
+            <li>Mobile App Development</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>School Projects</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Project Title</th>
+                    <th>Description</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Attendance App</td>
+                    <td>A simple attendance tracking app built using C++.</td>
+                    <td>2024</td>
+                </tr>
+                <tr>
+                    <td>Website Design</td>
+                    <td>Designed a website for school events with HTML, CSS, and JavaScript.</td>
+                    <td>2023</td>
+                </tr>
+                <tr>
+                    <td>Database Project</td>
+                    <td>Created a database for managing student information using SQL.</td>
+                    <td>2024</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="#" id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+ 
+
+    <script src="script.js"></script>
 </body>
 </html>
